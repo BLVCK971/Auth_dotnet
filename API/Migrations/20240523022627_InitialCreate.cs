@@ -1,6 +1,7 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore.Migrations;
 
+using Api.Identity;
 #nullable disable
 
 namespace Auth.API.Migrations

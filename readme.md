@@ -1,81 +1,86 @@
-# Authentication .NET 8 Template
+# .NET 8 Tools
 
 ## ToDo
 
 ### V1
 
 - Core Basis
-    [] Routing
-    [] Middleware
-    [] Filters and Attributes
+    -  [x] Routing
+    -  [ ] Custom Middleware
+    -  [x] Filters and Attributes
 - ORM
-    [] Change Tracker API
-    [] Lazy Loading, Eager Loading, Explicit Loading
+    -  [ ] Change Tracker API
+    -  [ ] Lazy Loading, Eager Loading, Explicit Loading
 - NoSql
-    [] Azure Cosmos DB
-    [] Redis
+    -  [ ] Azure Cosmos DB
+    -  [ ] Redis
 - Caching
-    [] Output Caching
+    -  [ ] Output Caching
 - Logging
-    [] Microsoft Extensions Logging
-    [] Serilog
+    -  [ ] Microsoft Extensions Logging
+    -  [ ] Serilog
 - Messaging
-    [] Azure Service Bus
-    [] RabbitMQ
-    [] MassTransit
+    -  [ ] Azure Service Bus
+    -  [ ] RabbitMQ
+    -  [ ] MassTransit
 - Testing
-    [] xUnit
+    -  [ ] xUnit
     - Mocking
-        [] NSubstitute
-        [] Moq
+        -  [ ] NSubstitute
+        -  [ ] Moq
     - Assertion
-        [] Fluent Assertions
+        -  [ ] Fluent Assertions
     - Test Data Generators
-        [] Bogus
+        -  [ ] Bogus
     - Integration Testing
-        [] WebApplication Factory
-        [] Docker Testcontainers
+        -  [ ] WebApplication Factory
+        -  [ ] Docker Testcontainers
     - Snapshot Testing
-        [] Verify
+        -  [ ] Verify
     - Perfomance Testing
-        [] K6
+        -  [ ] K6
     - E2E Testing
-        [] Playwrigt
+        -  [ ] Playwright
 - Streaming
-    [] Kafka
+    -  [ ] Kafka
 - Real Time Communication
-    [] SignalR
+    -  [ ] SignalR
 - API Documentation
-    [] Swagger
+    -  [x] Swagger
 - API SDK Libraries
-    [] Refit
-    [] RestSharp
+    -  [ ] Refit
+    -  [ ] RestSharp
 - Task Scheduling
-    [] BackgroundService
-    [] PeriodicTimer
+    -  [ ] BackgroundService
+    -  [ ] PeriodicTimer
 - Monitoring and Telemetry
-    [] Open Telemetry
-    [] Prometheus
-    [] Grafana
+    -  [ ] Open Telemetry
+    -  [ ] Prometheus
+    -  [ ] Grafana
 - Containerization
-    [] Docker
+    -  [ ] Docker
 - Orchestration
-    [] Kubernetes
+    -  [ ] Kubernetes
 - Cloud
-    [] Azure Functions
-    [] Azure Storage
+    -  [ ] Azure Functions
+    -  [ ] Azure Storage
 - CI CD
-    [] GitHub Actions
+    -  [ ] GitHub Actions
 - Others
-    [] Polly
-    [] Fluent Validation
-    [] Humanizer Core
-    [] Benchmark.NET
-    [] Terraform
+    -  [ ] Polly
+    -  [ ] Fluent Validation
+    -  [ ] Humanizer Core
+    -  [ ] Benchmark.NET
+    -  [ ] Terraform
 
 ### V2
 - Auth
     - Google, Apple, Facebook, Microsoft Auth
+    - Custom Users
+- A.I
+    - H5 file loading
+- Mapping
+    - OpenStreetMap
 
 
 ## Prerequisites
@@ -84,7 +89,7 @@
 
 ## Packages 
 
-### Built
+### Built in
 
 - Microsoft.AspNetCore.Identity
 
@@ -97,9 +102,8 @@
 ## Commands
 ### Add a new nuget package
 - dotnet add package {{ Name of the Package }}
-### Create a new Migration
+### Create a new Migration & Update Database
 - dotnet ef migrations add {{Name of the migration}
-### Update Database 
 - dotnet ef database update
 ### Sqlite the database
 - sqlite3 {{name of the file}}
