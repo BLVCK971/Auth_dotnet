@@ -1,0 +1,10 @@
+namespace API.Entities;
+
+public class Omless
+{
+    public Guid Id { get; set; }
+    public string Name { get; set; } = String.Empty;
+    public List<Fan>? Fans { get; set; }
+    public List<Video>? Videos { get; set; }
+    public List<Don>? Dons { get; set; }
+}

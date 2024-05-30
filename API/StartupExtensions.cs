@@ -1,18 +1,18 @@
 using System.Security.Claims;
-using Api.Filters;
-using Api.Identity;
-using Api.Services;
+using API.Filters;
+using API.Identity;
+using API.Services;
+using API.Database;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.OpenApi.Models;
 
-namespace Api;
+namespace API;
 
 public static class StartupExtensions
 {
     public static WebApplication ConfigureServices(this WebApplicationBuilder builder)
     {
-		builder.Services.AddEndpointsApiExplorer();
+        builder.Services.AddEndpointsApiExplorer();
         builder.Services.AddSwagger();
         builder.Services.AddAuthentication().AddBearerToken(IdentityConstants.BearerScheme);
         builder.Services.AddAuthorizationBuilder();
@@ -37,8 +37,8 @@ public static class StartupExtensions
 
         builder.Services.AddControllers(opt =>
         {
-        opt.Filters.Add<MyLogging>();
-        //  opt.Filters.Add(new MyLogging());
+            opt.Filters.Add<MyLogging>();
+            //  opt.Filters.Add(new MyLogging());
         });
 
         return builder.Build();
@@ -58,10 +58,9 @@ public static class StartupExtensions
         // EndPoint Example
         app.MapGet("/", (ClaimsPrincipal user) => $"Hello {user.Identity!.Name} !")
             .RequireAuthorization();
-        
 
-		//app.UseEndpoints(endpoints => endpoints.MapControllers());
+        //app.UseEndpoints(endpoints => endpoints.MapControllers());
         app.MapControllers();
-		return app;
+        return app;
     }
 }

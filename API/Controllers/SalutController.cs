@@ -1,7 +1,7 @@
-using Api.Filters;
+using API.Filters;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Api.Controllers;
+namespace API.Controllers;
 
 [Route("api/[controller]")]
 [ApiController]

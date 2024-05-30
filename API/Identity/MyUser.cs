@@ -1,4 +1,4 @@
 using Microsoft.AspNetCore.Identity;
 
-namespace Api.Identity;
-class MyUser : IdentityUser { }
+namespace API.Identity;
+public class MyUser : IdentityUser { }

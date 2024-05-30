@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc.Filters;
 
-namespace Api.Filters;
+namespace API.Filters;
 
 public class MyLoggingAsync : Attribute, IAsyncActionFilter
 {
