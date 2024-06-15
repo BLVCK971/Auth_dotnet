@@ -1,10 +1,11 @@
 using System.Security.Claims;
+using API.Database;
 using API.Filters;
 using API.Identity;
 using API.Services;
-using API.Database;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Serilog;
 
 namespace API;
 
@@ -12,6 +13,10 @@ public static class StartupExtensions
 {
     public static WebApplication ConfigureServices(this WebApplicationBuilder builder)
     {
+        builder.Host.UseSerilog(
+            (context, config) => config.ReadFrom.Configuration(context.Configuration)
+        );
+
         builder.Services.AddEndpointsApiExplorer();
         builder.Services.AddSwagger();
         builder.Services.AddAuthentication().AddBearerToken(IdentityConstants.BearerScheme);
@@ -46,6 +51,7 @@ public static class StartupExtensions
 
     public static WebApplication ConfigurePipeline(this WebApplication app)
     {
+        app.UseSerilogRequestLogging();
         app.UseRouting();
         app.UseAuthorization();
         app.UseSwagger();
